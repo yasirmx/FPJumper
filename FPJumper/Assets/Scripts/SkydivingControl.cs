@@ -58,7 +58,6 @@ public class SkydivingControl : MonoBehaviour {
 	{
 		if(isSprint == false && isCrouch == false)
 		{       
-			Debug.Log("Jump");
 			float moveX = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
 			float moveZ = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
 			float moveY = Input.GetAxis("Jump") * jumpHeight * Time.deltaTime;

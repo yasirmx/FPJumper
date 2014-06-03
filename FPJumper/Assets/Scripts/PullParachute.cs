@@ -8,6 +8,7 @@ public class PullParachute : MonoBehaviour {
 	public GameObject Reserve;
 	public MouseOrbit cameraControl;
 	public GameObject MainCamera;
+	public GameObject bloodSplatter;
 	private Transform CameraPosition;
 	private bool ParachutePulled = false;
 	private bool ReservePulled = false;
@@ -22,9 +23,10 @@ public class PullParachute : MonoBehaviour {
 	
 	void OnCollisionEnter (Collision collider)
 	{
-		if (collider.gameObject.name == "CenterTerrain")
+		if (collider.gameObject.name == "GoogleMaps")
 		{
 			parachuterAudio.Play();
+			bloodSplatter.SetActive(true);
 		}
 	}
 	
@@ -45,7 +47,7 @@ public class PullParachute : MonoBehaviour {
 		}
 	}
 	
-	void PulledParachute()
+	public void PulledParachute()
 	{
 		if (!ParachutePulled && !ReservePulled)
 		{

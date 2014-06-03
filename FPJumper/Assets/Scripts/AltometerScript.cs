@@ -7,7 +7,6 @@ public class AltometerScript : MonoBehaviour {
 	public GameObject Skydiver;
 	public Vector2 szPtr;
 	public Rect rCircle;
-	public Texture2D bigCircle;
 	public Texture2D pointer;
 	public float angle = 340;
 	private float diverHeightPercent = 351.3817F; //35138.17F / 100
@@ -55,7 +54,6 @@ public class AltometerScript : MonoBehaviour {
   		rPtr.y = rCircle.y-szPtr.y/2;
    		rPtr.height = szPtr.y;
  
-   		GUI.DrawTexture(rCircle,bigCircle);
     	Matrix4x4 svMat = GUI.matrix;
     	GUIUtility.RotateAroundPivot(angle%360,pivot); 
     	GUI.DrawTexture(rPtr,pointer);
